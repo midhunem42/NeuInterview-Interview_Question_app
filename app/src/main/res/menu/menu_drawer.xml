@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/action_Home"
+            android:title="Home"
+
+    />
+    <item
+            android:id="@+id/action_HTML"
+            android:title="HTML 5"
+            android:icon="@drawable/html5"
+    />
+    <item
+            android:id="@+id/action_CSS"
+            android:title="CSS 3"
+            android:icon="@drawable/css3"
+    />
+    <item
+            android:id="@+id/action_Bootstrap"
+            android:title="Bootstrap"
+            android:icon="@drawable/bootstrap"
+    />
+    <item
+            android:id="@+id/action_JavaScript"
+            android:title="JavaScript"
+            android:icon="@drawable/js"
+    />
+    <item
+            android:id="@+id/action_jQuery"
+            android:title="jQuery"
+    />
+    <item
+            android:id="@+id/action_Angular"
+            android:title="Angular"
+            android:icon="@drawable/angular"
+    />
+    <item
+            android:id="@+id/action_TypScript"
+            android:title="TypScript"
+            android:icon="@drawable/typscript"
+    />
+    <item
+            android:id="@+id/action_NodeJS"
+            android:title="NodeJS"
+            android:icon="@drawable/nodejs"
+    />
+    <item
+            android:id="@+id/action_ES6"
+            android:title="ES6"
+            android:icon="@drawable/es6"
+    />
+    <item
+            android:id="@+id/action_ReactJS"
+            android:title="ReactJS"
+            android:icon="@drawable/react"
+    />
+    <item
+            android:id="@+id/action_MongoDB"
+            android:title="MongoDB"
+            android:icon="@drawable/mongodb"
+    />
+    <item
+            android:id="@+id/action_AEM"
+            android:title="AEM"
+    />
+    <item
+            android:id="@+id/action_Misc"
+            android:title="Misc"
+    />
+</menu>

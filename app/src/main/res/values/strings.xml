@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NeuInterview</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="html5">HTML5</string>
+    <string name="css3">CSS3</string>
+    <string name="bootstrap">BootStrap</string>
+    <string name="javascript">JavaScript</string>
+    <string name="jquery">jQUERY</string>
+    <string name="angular">Angular</string>
+    <string name="typscript">TypScript</string>
+    <string name="nodejs">NodeJS</string>
+    <string name="es6">ES6</string>
+    <string name="reactjs">ReactJS</string>
+    <string name="mongodb">MongoDB</string>
+    <string name="aem">AEM</string>
+    <string name="misc">MISC</string>
+    <string name="appID">ca-app-pub-7618080919899035~3206911483</string>
+    <string name="homeFragmentInterstial">ca-app-pub-3940256099942544/1033173712</string>
+</resources>
