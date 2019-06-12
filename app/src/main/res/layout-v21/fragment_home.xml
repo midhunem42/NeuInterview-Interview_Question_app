@@ -7,7 +7,7 @@
     <GridLayout android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:rowCount="7"
+                android:rowCount="6"
                 android:background="#FFF">
         <android.support.v7.widget.CardView
                 android:id="@+id/cvHtml5"
@@ -186,7 +186,7 @@
                            android:padding="10dp"
                            android:contentDescription="@string/jquery"
                            android:layout_gravity="center_horizontal"
-                           android:src="@drawable/js"/>
+                           android:src="@drawable/jquery"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                           android:textColor="@android:color/black"
                           android:textAlignment="center"
@@ -419,117 +419,6 @@
                           android:textStyle="normal"
                           android:layout_gravity="center_horizontal"
                           android:text="@string/mongodb"/>
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-                android:id="@+id/cvAem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
-                android:layout_row="5"
-                android:layout_column="1"
-                android:layout_rowSpan="1"
-                android:layout_columnSpan="1"
-        >
-            <LinearLayout android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_horizontal|center_vertical"
-                          android:orientation="vertical"
-            >
-                <ImageView android:layout_width="100dp"
-                           android:layout_height="100dp"
-                           android:padding="10dp"
-                           android:contentDescription="@string/aem"
-                           android:layout_gravity="center_horizontal"
-                           android:src="@drawable/html5"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:textColor="@android:color/black"
-                          android:textAlignment="center"
-                          android:textSize="18sp"
-                          android:textStyle="normal"
-                          android:layout_gravity="center_horizontal"
-                          android:text="@string/aem"/>
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-                android:id="@+id/cvMisc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
-                android:layout_row="6"
-                android:layout_column="0"
-                android:layout_rowSpan="1"
-                android:layout_columnSpan="1"
-        >
-            <LinearLayout android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_horizontal|center_vertical"
-                          android:orientation="vertical"
-            >
-                <ImageView android:layout_width="100dp"
-                           android:layout_height="100dp"
-                           android:padding="10dp"
-                           android:contentDescription="@string/misc"
-                           android:layout_gravity="center_horizontal"
-                           android:src="@drawable/html5"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:textColor="@android:color/black"
-                          android:textAlignment="center"
-                          android:textSize="18sp"
-                          android:textStyle="normal"
-                          android:layout_gravity="center_horizontal"
-                          android:text="@string/misc"/>
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
-                android:layout_row="6"
-                android:layout_column="1"
-                android:layout_rowSpan="1"
-                android:layout_columnSpan="1"
-        >
-            <LinearLayout android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_horizontal|center_vertical"
-                          android:orientation="vertical"
-            >
-                <ImageView android:layout_width="100dp"
-                           android:layout_height="100dp"
-                           android:layout_margin="10dp"
-                           android:layout_gravity="center_horizontal"
-                           android:src="@drawable/html5"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:textColor="@android:color/black"
-                          android:textAlignment="center"
-                          android:textSize="18sp"
-                          android:textStyle="normal"
-                          android:layout_gravity="center_horizontal"
-                          android:text="HTML 5"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

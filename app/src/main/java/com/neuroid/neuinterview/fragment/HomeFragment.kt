@@ -37,6 +37,9 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+        val actionBar = (activity )!!.actionBar
+        actionBar?.title = "Home "
+
         MobileAds.initialize(activity,getString(R.string.appID))
         mInterstitialAd = InterstitialAd(activity)
         mInterstitialAd.adUnitId = getString(R.string.homeFragmentInterstial)
@@ -77,8 +80,6 @@ class HomeFragment : Fragment() {
         val cvEs6 = view.findViewById<CardView>(R.id.cvEs6)
         val cvReact = view.findViewById<CardView>(R.id.cvReact)
         val cvMongoDb = view.findViewById<CardView>(R.id.cvMongoDb)
-        val cvAem = view.findViewById<CardView>(R.id.cvAem)
-        val cvMisc = view.findViewById<CardView>(R.id.cvMisc)
 
         cvHtml5.setOnClickListener {
             if (mInterstitialAd.isLoaded) {
@@ -136,17 +137,7 @@ class HomeFragment : Fragment() {
                 mInterstitialAd.show()
             }
             replaceFragments("MongoDB")}
-        cvAem.setOnClickListener{
-            if (mInterstitialAd.isLoaded) {
-                mInterstitialAd.show()
-            }
-            replaceFragments("AEM")}
-        cvAem.setOnClickListener{
-            if (mInterstitialAd.isLoaded) {
-                mInterstitialAd.show()
-            }
-            replaceFragments("Misc")}
-        return view;
+        return view
     }
 
     private fun replaceFragments(name:String) {

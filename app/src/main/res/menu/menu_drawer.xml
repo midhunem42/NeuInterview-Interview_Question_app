@@ -5,6 +5,7 @@
     <item
             android:id="@+id/action_Home"
             android:title="Home"
+            android:icon="@drawable/ic_home_black_24dp"
 
     />
     <item
@@ -30,6 +31,7 @@
     <item
             android:id="@+id/action_jQuery"
             android:title="jQuery"
+            android:icon="@drawable/jquery"
     />
     <item
             android:id="@+id/action_Angular"
@@ -60,13 +62,5 @@
             android:id="@+id/action_MongoDB"
             android:title="MongoDB"
             android:icon="@drawable/mongodb"
-    />
-    <item
-            android:id="@+id/action_AEM"
-            android:title="AEM"
-    />
-    <item
-            android:id="@+id/action_Misc"
-            android:title="Misc"
     />
 </menu>

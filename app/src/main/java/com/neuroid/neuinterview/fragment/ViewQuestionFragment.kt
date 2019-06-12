@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.neuroid.neuinterview.R
 import com.neuroid.neuinterview.Utility.AppDBOpenHelper
@@ -38,7 +39,7 @@ class ViewQuestionFragment : Fragment() {
         val name = arguments?.getString("category")
         val qId = arguments!!.getInt("qId")
 
-        val dbHandler= AppDBOpenHelper(activity!!,null);
+        val dbHandler= AppDBOpenHelper(activity!!,null)
             questions = dbHandler.getQuestionsByCategory(name as String)
         dbHandler.close()
 
@@ -46,12 +47,12 @@ class ViewQuestionFragment : Fragment() {
         setData(view)
 
         val backBtn = view.findViewById<Button>(R.id.btnViewBack)
-        val nextBtn = view.findViewById<Button>(R.id.btnNxtView)
-        val prevBtn = view.findViewById<Button>(R.id.btnPrevView)
+        val nextBtn = view.findViewById<ImageButton>(R.id.btnNxtView)
+        val prevBtn = view.findViewById<ImageButton>(R.id.btnPrevView)
 
 
         backBtn.setOnClickListener {
-            val fragment = QuestionsFragment.newInstance(name as String)
+            val fragment = QuestionsFragment.newInstance(name)
             replaceFragments(fragment)
         }
 
@@ -86,12 +87,23 @@ class ViewQuestionFragment : Fragment() {
         val tv = view.findViewById<TextView>(R.id.viewQuestion)
         val tvQuestion = view.findViewById<TextView>(R.id.tvQuestion)
         val tvAnswer = view.findViewById<TextView>(R.id.tvAnswer)
-        val nextBtn = view.findViewById<Button>(R.id.btnNxtView)
-        val prevBtn = view.findViewById<Button>(R.id.btnPrevView)
+        val nextBtn = view.findViewById<ImageButton>(R.id.btnNxtView)
+        val prevBtn = view.findViewById<ImageButton>(R.id.btnPrevView)
 
 
         nextBtn.isClickable = questions!!.size-1 != currentQid
         prevBtn.isClickable = currentQid != 0
+
+        if(questions!!.size-1 == currentQid){
+            nextBtn.setBackgroundResource(R.drawable.arrow_right_disabled)
+        }else{
+            nextBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_right_black_24dp)
+        }
+        if(currentQid == 0){
+            prevBtn.setBackgroundResource(R.drawable.arrow_left_disabled)
+        }else{
+            prevBtn.setBackgroundResource(R.drawable.arrow_left)
+        }
 
         val textQ= "Question "
         tv.text = textQ.plus(currentQid + 1)

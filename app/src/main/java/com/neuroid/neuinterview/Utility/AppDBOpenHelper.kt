@@ -27,7 +27,7 @@ class AppDBOpenHelper (context: Context,
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        Log.e("TAG", "Updating table from " + oldVersion + " to " + newVersion);
+        Log.e("TAG", "Updating table from " + oldVersion + " to " + newVersion)
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME)
         onCreate(db)
     }
@@ -38,21 +38,193 @@ class AppDBOpenHelper (context: Context,
     }
 
     private fun GenerateQuestionFunction() {
-        addQuestion(Question(1,"HTML5","What is Html","html ===>"))
-        addQuestion(Question(1,"CSS3","What is CSS3","CSS3 5 is ===>"))
-        addQuestion(Question(1,"BootStrap","What is BootStrap","BootStrap 5 is ===>"))
-        addQuestion(Question(1,"JavaScript","What is JavaScript","JavaScript 5 is ===>"))
-        addQuestion(Question(1,"jQuery","What is jQuery","jQuery 5 is ===>"))
-
-        addQuestion(Question(1,"TypScript","What is TypScript","TypScript 5 is ===>"))
-        addQuestion(Question(1,"NodeJS","What is NodeJS","NodeJS 5 is ===>"))
-        addQuestion(Question(1,"ES6","What is ES6","ES6 5 is ===>"))
-        addQuestion(Question(1,"ReactJS","What is ReactJS","ReactJS 5 is ===>"))
-        addQuestion(Question(1,"MongoDB","What is MongoDB","MongoDB 5 is ===>"))
-        addQuestion(Question(1,"AEM","What is AEM","AEM 5 is ===>"))
-        addQuestion(Question(1,"Misc","What is Misc","Misc 5 is ===>"))
         AngularQuestions()
         HtmlQuestions()
+        CSSQuestions()
+        BootstrapQuestions()
+        JavaScriptQuestions()
+        jQueryQuestions()
+        TypScriptQuestions()
+        NodeJSQuestions()
+        ES6Questions()
+        ReactJSQuestions()
+        MongoDBQuestions()
+    }
+
+    private fun MongoDBQuestions() {
+        addQuestion(Question(1,"MongoDB","What is MongoDB?","Mongo-DB is a document database which provides high performance, high availability and easy scalability.\n" +
+                "\n"))
+        addQuestion(Question(2,"MongoDB","What is “Namespace” in MongoDB?","MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection. The concatenation of the collection name and database name is called a namespace."))
+        addQuestion(Question(3,"MongoDB","What is sharding in MongoDB?","The procedure of storing data records across multiple machines is referred as Sharding. It is a MongoDB approach to meet the demands of data growth. It is the horizontal partition of data in a database or search engine. Each partition is referred as shard or database shard.\n" +
+                "\n"))
+        addQuestion(Question(4,"MongoDB","How can you see the connection used by Mongos?","To see the connection used by Mongos use db_adminCommand (“connPoolStats”);\n" +
+                "\n"))
+        addQuestion(Question(5,"MongoDB","Explain what is a replica set?","A replica set is a group of mongo instances that host the same data set. In replica set, one node is primary, and another is secondary. From primary to the secondary node all data replicates.\n" +
+                "\n"))
+        addQuestion(Question(6,"MongoDB","How replication works in MongoDB?","Across multiple servers, the process of synchronizing data is known as replication. It provides redundancy and increase data availability with multiple copies of data on different database server. Replication helps in protecting the database from the loss of a single server.\n" +
+                "\n"))
+        addQuestion(Question(7,"MongoDB","While creating Schema in MongoDB what are the points need to be taken in consideration?","Points need to be taken in consideration are\n" +
+                "\n" +
+                "Design your schema according to user requirements\n" +
+                "Combine objects into one document if you use them together. Otherwise, separate them\n" +
+                "Do joins while write, and not when it is on read\n" +
+                "For most frequent use cases optimize your schema\n" +
+                "Do complex aggregation in the schema\n"))
+        addQuestion(Question(8,"MongoDB","Explain what is the role of profiler in MongoDB?","MongoDB database profiler shows performance characteristics of each operation against the database. You can find queries using the profiler that are slower than they should be.\n" +
+                "\n"))
+        addQuestion(Question(9,"MongoDB"," To do safe backups what is the feature in MongoDB that you can use?","Journaling is the feature in MongoDB that you can use to do safe backups.\n" +
+                "\n"))
+        addQuestion(Question(10,"MongoDB","Mention what is Objecld composed of?","Objectld is composed of\n" +
+                "\n" +
+                "*)\tTimestamp\n" +
+                "*)\tClient machine ID\n" +
+                "*)\tClient process ID\n" +
+                "*)\t3 byte incremented counter"))
+
+
+    }
+
+    private fun ReactJSQuestions() {
+        addQuestion(Question(1,"ReactJS","What is ReactJS","React is an open-source frontend JavaScript library which is used for building user interfaces especially for single page applications. It is used for handling view layer for web and mobile apps. React was created by Jordan Walke, a software engineer working for Facebook. React was first deployed on Facebook's News Feed in 2011 and on Instagram in 2012."))
+        addQuestion(Question(2,"ReactJS","What are the major features of React","The major features of React are:\n" +
+                "\n" +
+                "\n*)\tIt uses VirtualDOM instead RealDOM considering that RealDOM manipulations are expensive.\n" +
+                "\n" +
+                "*)\tSupports server-side rendering.\n" +
+                "\n" +
+                "*)\tFollows Unidirectional* data flow or data binding.\n" +
+                "\n" +
+                "*)\tUses reusable/composable UI components to develop the view."))
+        addQuestion(Question(3,"ReactJS","What is JSX?","JSX is a XML-like syntax extension to ECMAScript (the acronym stands for JavaScript XML). Basically it just provides syntactic sugar for the React.createElement() function, giving us expressiveness of JavaScript along with HTML like template syntax."))
+        addQuestion(Question(4,"ReactJS","What is the difference between Element and Component?","An Element is a plain object describing what you want to appear on the screen in terms of the DOM nodes or other components. Elements can contain other Elements in their props. Creating a React element is cheap. Once an element is created, it is never mutated."))
+        addQuestion(Question(5,"ReactJS","When to use a Class Component over a Function Component?","If the component needs state or lifecycle methods then use class component otherwise use function component.\n" +
+                "\n"))
+        addQuestion(Question(6,"ReactJS","What are Pure Components?","React.PureComponent is exactly the same as React.Component except that it handles the shouldComponentUpdate() method for you. When props or state changes, PureComponent will do a shallow comparison on both props and state. Component on the other hand won't compare current props and state to next out of the box. Thus, the component will re-render by default whenever shouldComponentUpdate is called."))
+        addQuestion(Question(7,"ReactJS","What is the difference between state and props?","Both props and state are plain JavaScript objects. While both of them hold information that influences the output of render, they are different in their functionality with respect to component. Props get passed to the component similar to function parameters whereas state is managed within the component similar to variables declared within a function."))
+        addQuestion(Question(8,"ReactJS","What is the purpose of callback function as an argument of setState()?","The callback function is invoked when setState finished and the component gets rendered. Since setState() is asynchronous the callback function is used for any post action.\n" +
+                "\n" +
+                "Note: It is recommended to use lifecycle method rather than this callback function.\n" +
+                "\n" +
+                "setState({ name: 'John' }, () => console.log('The name has updated and component re-rendered'))"))
+        addQuestion(Question(9,"ReactJS","How to pass a parameter to an event handler or callback?","You can use an arrow function to wrap around an event handler and pass parameters:\n" +
+                "\n" +
+                "<button onClick={() => this.handleClick(id)} />\n" +
+                "This is an equivalent to calling .bind:\n" +
+                "\n" +
+                "<button onClick={this.handleClick.bind(this, id)} />\n>"))
+        addQuestion(Question(10,"ReactJS","What are synthetic events in React?","SyntheticEvent is a cross-browser wrapper around the browser's native event. It's API is same as the browser's native event, including stopPropagation() and preventDefault(), except the events work identically across all browsers."))
+
+    }
+    private fun ES6Questions() {
+        addQuestion(Question(1,"ES6","What are the Navigator-specific methods used in ES6?","javaEnabled()\n" +
+                " \n" +
+                "taintEnabled()\n" +
+                " \n" +
+                "plugings.refresh\n" +
+                " \n" +
+                "preference(name,value)"))
+        addQuestion(Question(2,"ES6","What is the use of pop() method?","What is the use of pop() method?"))
+        addQuestion(Question(3,"ES6","What is Callback?","Callback: In Callback, A function may be passed as a parameter to another function.\n" +
+                "\n"))
+        addQuestion(Question(4,"ES6","What is Alert Dialog Box?","It is used to send a warning message to the users and provides only one button “OK” to select and proceed.\n" +
+                "\n"))
+        addQuestion(Question(5,"ES6","What is the syntax used for creating a number object?","var val = new Number(number);\n"))
+        addQuestion(Question(6,"ES6","What is location.replace()?","It is the replace() method of window.location object which is used to replace the current document with a new one."))
+        addQuestion(Question(7,"ES6","Who is the inventor of ES6?","Designed by Brendan Eich.\n" +
+                "\n"))
+        addQuestion(Question(8,"ES6"," How to export a single value or element in a Module?","By using export default element_name\n" +
+                "\n"))
+        addQuestion(Question(9,"ES6","How to export multiple values or elements in a Module?","By using export {element_name1,element_name2,….}\n" +
+                "\n"))
+        addQuestion(Question(10,"ES6","What are the predefined types of Error Objects available in ES6?","\n*)\tURIError\n" +
+                "\n" +
+                "*)\tEvalError\n" +
+                "\n" +
+                "*)\tTypeError\n" +
+                "\n" +
+                "*)\tRangeError\n" +
+                "\n" +
+                "*)\tSyntaxError\n" +
+                "\n" +
+                "*)\tReferenceError\n"))
+
+    }
+    private fun NodeJSQuestions() {
+        addQuestion(Question(1,"NodeJS","Why code written in Node.JS is pretty fast although being written in JavaScript?","Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution."))
+        addQuestion(Question(2,"NodeJS","Which is the command to show version of Node?","node --version"))
+        addQuestion(Question(3,"NodeJS","net.isIP(input) returns 4 for IP version 4 addresses.","net.isIP(input) tests if input is an IP address. Returns 0 for invalid strings, returns 4 for IP version 4 addresses, and returns 6 for IP version 6 addresses." +
+                "\n"))
+        addQuestion(Question(4,"NodeJS","Which method of fs module is used to read a file?","fs.read(fd, buffer, offset, length, position, callback)"))
+        addQuestion(Question(5,"NodeJS","Which method of fs module is used to remove a directory?","fs.rmdir(path, callback)"))
+        addQuestion(Question(6,"NodeJS","Can we create child processes in Node applications.","Node facilitates creation of child processes to leverage parallel processing on multi-core cpu based systems."))
+        addQuestion(Question(7,"NodeJS","What does event-driven programming mean?","In computer programming, event driven programming is a programming paradigm in which the flow of the program is determined by events like messages from other programs or threads. It is an application architecture technique divided into two sections \n\n1)\t Event Selection \n\n2)\t Event Handling"))
+        addQuestion(Question(8,"NodeJS"," What is control flow function?"," What is control flow function?"))
+        addQuestion(Question(9,"NodeJS","Why Node.js is single threaded?","For async processing, Node.js was created explicitly as an experiment. It is believed that more performance and scalability can be achieved by doing async processing on a single thread under typical web loads than the typical thread based implementation.\n" +
+                "\n"))
+        addQuestion(Question(10,"NodeJS","Can you access DOM in node?","No, you cannot access DOM in node.\n" +
+                "\n"))
+
+    }
+
+    private fun TypScriptQuestions() {
+        addQuestion(Question(1,"TypScript","What is Type assertions in TypeScript?","A type assertion is like a type cast in other languages, but performs no special checking or restructuring of data. It has no runtime impact, and is used purely by the compiler. TypeScript assumes that we have performed any special checks that we need"))
+        addQuestion(Question(2,"TypScript","What is as syntax in TypeScript?","The as is additional syntax for Type assertion in TypeScript. The reason for introducing the as-syntax is that the original syntax (<type>) conflicted with JSX."))
+        addQuestion(Question(3,"TypScript","What is Compilation Context?","The compilation context is basically grouping of the files that TypeScript will parse and analyze to determine what is valid and what isn’t. Along with the information about which files, the compilation context contains information about which compiler options. A great way to define this logical grouping is using a tsconfig.json file."))
+        addQuestion(Question(4,"TypScript","Can an interface extends a class just like a classimplements interface?","Yes, an interface extends a class, when it does it inherits the members of the class but not their implementations. Interfaces inherit even the private and protected members of a base class. This means that when you create an interface that extends a class with private or protected members, that interface type can only be implemented by that class or a subclass of it.\n" +
+                "\n"))
+        addQuestion(Question(5,"TypScript","What are all the other access modifiers that TypeScript supports?","TypeScript supports access modifiers public, private and protected which determine the accessibility of a class member as given below:\n" +
+                "\n" +
+                "*\tpublic - All the members of the class, its child classes, and the instance of the class can access.\n" +
+                "*\tprotected - All the members of the class and its child classes can access them. But the instance of the class can not access.\n" +
+                "*\tprivate - Only the members of the class can access them."))
+        addQuestion(Question(6,"TypScript","What is Generic Class?","A generic class has a similar shape to a generic interface. Generic classes have a generic type parameter list in angle brackets (<>) following the name of the class"))
+        addQuestion(Question(7,"TypScript","What is JSX? Can we use JSX in TypeScript?t","JSX is an embeddable XML-like syntax. It is meant to be transformed into valid JavaScript. JSX came to popularity with the React framework. TypeScript supports embedding, type checking, and compiling JSX directly into JavaScript.\n" +
+                "\n" +
+                "In order to use JSX in our file: we must name our file with a .tsx extension and should enable jsx option."))
+        addQuestion(Question(8,"TypScript"," What are all the JSX modes TypeScript supports?","TypeScript ships with three JSX modes: preserve, react, and react-native.\n" +
+                "\n" +
+                "The preserve mode will keep the JSX as part of the output to be further consumed by another transform step (e.g. Babel). Additionally the output will have a .jsx file extension. The react mode will emit React.createElement, does not need to go through a JSX transformation before use, and the output will have a .js file extension. The react-native mode is the equivalent of preserve in that it keeps all JSX, but the output will instead have a .js file extension."))
+        addQuestion(Question(9,"TypScript","Why TypeScript is referred as Optionally Statically Typed Language?\n" +
+                "\n","TypeScript is referred as optionally statically typed, which means we can make the compiler to ignore the type of a variable optionally. Using any data type, we can assign any type of value to the variable. TypeScript will not give any error checking during compilation."))
+        addQuestion(Question(10,"TypScript"," What is TypeScript? Why should we use it?","TypeScript is a typed superset of JavaScript that compiles to plain JavaScript which runs on any browser or JavaScript engine.\n" +
+                "\n"))
+    }
+
+    private fun jQueryQuestions() {
+        addQuestion(Question(1,"jQuery","What is jQuery","jQuery is a fast and concise JavaScript Library created by John Resig in 2006 with a nice motto - Write less, do more. jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is a JavaScript toolkit designed to simplify various tasks by writing less code.>"))
+        addQuestion(Question(2,"jQuery","What are the core features of jQuery?","DOM manipulation − The jQuery made it easy to select DOM elements, traverse them and modifying their content by using cross-browser open source selector engine called Sizzle.\n" +
+                "\n" +
+                "*)\tEvent handling − The jQuery offers an elegant way to capture a wide variety of events, such as a user clicking on a link, without the need to clutter the HTML code itself with event handlers.\n" +
+                "\n" +
+                "*)\tAJAX Support − The jQuery helps you a lot to develop a responsive and feature-rich site using AJAX technology.\n" +
+                "\n" +
+                "*)\tAnimations − The jQuery comes with plenty of built-in animation effects which you can use in your websites.\n" +
+                "\n" +
+                "*)\tLightweight − The jQuery is very lightweight library - about 19KB in size ( Minified and gzipped ).\n" +
+                "\n" +
+                "*)\tCross Browser Support − The jQuery has cross-browser support, and works well in IE 6.0+, FF 2.0+, Safari 3.0+, Chrome and Opera 9.0+.\n" +
+                "\n" +
+                "Latest Technology − The jQuery supports CSS3 selectors and basic XPath syntax."))
+        addQuestion(Question(3,"jQuery","How will you make sure that DOM is ready using jQuery?","Use \$(document).ready() function. Everything inside it will load as soon as the DOM is loaded and before the page contents are loaded.\n" +
+                "\n"))
+        addQuestion(Question(4,"jQuery","How can you create an Object in JavaScript?y","JavaScript supports Object concept very well. You can create an object using the object literal as follows −\n" +
+                "\n" +
+                "var emp = {\n" +
+                "   name: \"Zara\",\n" +
+                "   age: 10\n" +
+                "};"))
+        addQuestion(Question(5,"jQuery","Can you assign a anonymous function to a variable?\n","Yes! An anonymous function can be assigned to a variable.\n" +
+                "\n"))
+        addQuestion(Question(6,"jQuery","What is arguments object in JavaScript?","JavaScript variable arguments represents the arguments passed to a function.\n" +
+                "\n"))
+        addQuestion(Question(7,"jQuery","What is the purpose of 'this' operator in JavaScript?","JavaScript famous keyword this always refers to the current context.\n" +
+                "\n"))
+        addQuestion(Question(8,"jQuery","What is callback?","A callback is a plain JavaScript function passed to some method as an argument or option. Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.\n" +
+                "\n"))
+        addQuestion(Question(9,"jQuery","What is closure?","Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope.\n" +
+                "\n"))
+        addQuestion(Question(10,"jQuery","Which built-in method returns the length of the string?","length() method returns the length of the string.\n" +
+                "\n"))
     }
     private fun HtmlQuestions() {
         addQuestion(Question(1,"HTML5","What is Html5","HTML5 is the latest version of HTML and XHTML with new features like Drawing, Animation, Video and Audio etc. It is used to solve some common structural problems encountered with HTML 4.1. It gives more flexibility to both the web developers, the web designers and enables more exciting and interactive websites in addition to more powerful and efficient applications. The HTML 5 <! doctype html> is recognized by all modern browsers.\n" +
@@ -138,10 +310,22 @@ class AppDBOpenHelper (context: Context,
         addQuestion(Question(20,"HTML5","What is the purpose of datetime-local input control in Web form 2.0?","It represents a date and time (year, month, day, hour, minute, second, fractions of a second) encoded according to ISO 8601 with no time zone information."))
         addQuestion(Question(21,"HTML5","What is the purpose of month input control in Web form 2.0?","It represents a date consisting of a year and a month encoded according to ISO 8601.\n" +
                 "\n"))
-        addQuestion(Question(22,"HTML5","What is Html","html ===>"))
-        addQuestion(Question(23,"HTML5","What is Html","html ===>"))
-        addQuestion(Question(24,"HTML5","What is Html","html ===>"))
-        addQuestion(Question(25,"HTML5","What is Html","html ===>"))
+        addQuestion(Question(22,"HTML5","What are the new Form elements made available in HTML5?\n\n","The new Form elements in HTML5 provide for a better functionality. The tags provided to carry out these functions are:\n" +
+                "\n\n" +
+                "1)\t <datalist> - It specifies a list of options for input controls. These options are pre-defined.\n\n" +
+                "2)\t <keygen> - This tag defines a key-pair generator field.\n\n" +
+                "3)\t <output> - It defines the result of a calculation."))
+        addQuestion(Question(23,"HTML5","What is HTML5 Web Storage?","With HTML5, it is possible for the web pages to store the data locally in the user's browser. This web storage is much faster and secured than the cookies. Also, a larger amount of data can be stored without causing any adverse effect to the performance of the website.\n" +
+                "\n\n" +
+                "The data here is not included with every server request. It is used ONLY when it is asked for. It is only that particular web page that can access the data stored by itself."))
+        addQuestion(Question(24,"HTML5","What is a Web Worker?","1.\tA web worker is a JavaScript which runs in the background. It exists in external files.\n" +
+                "\n2.\tIt is independent of other scripts and does not affect the performance of the page.\n\n" +
+                "3.\tWeb workers are usually used for CPU intensive tasks."))
+        addQuestion(Question(25,"HTML5","Which JavaScript objects are not accessible to web worker?","Following JavaScript objects are not accessible to web worker:\n" +
+                "\n\n" +
+                "1.\t The window object\n\n" +
+                "2.\t The document object\n\n" +
+                "3.\t The parent object"))
 
     }
     private fun AngularQuestions(){
@@ -347,6 +531,136 @@ class AppDBOpenHelper (context: Context,
 
 
     }
+    private fun CSSQuestions(){
+        addQuestion(Question(1,"CSS3","What is CSS","CSS outline the style of an HTML webpage, it is a language by which we can set the behavior of an HTML webpage. It describes how the HTML content will be shown on screen.\n" +
+                "\n\n" +
+                "CSS controls the layout of several HTML web pages. CSS is referred to as the Cascading Style Sheet."))
+        addQuestion(Question(2,"CSS3","Distinguish between CSS2 and CSS3?","There are several differences between CSS2 and CSS3.\n" +
+                "\n" +
+                "\n1)\tCSS3 is divided into two various sections which are called as a module. Whereas in CSS2 everything accedes into a single document with all the information in it.\n" +
+                "\n2)\tCSS3 modules are supported almost on every browser and on the other hand modules of CSS and CSS2 are not supported in every browser.\n\n" +
+                "3)\tIn CSS3 we will find that many graphics related characteristics have been introduced like “Border-radius or box-shadow, flexbox.\n\n" +
+                "4)\tIn CSS3, a user can precise multiple background images on a webpage by using properties like background-image, background-position, and background-repeat styles."))
+        addQuestion(Question(3,"CSS3","Cite different types of CSS ?","1)\tExternal – These are written in separate files.\n\n" +
+                "2)\tInternal – These are cited at the top of the web page code document.\n" +
+                "\n3)\tInline – These are written right next to the text."))
+
+        addQuestion(Question(4,"CSS3",") Why is the external style sheet useful?","External style sheet is very useful as we write all the styling codes in a single file and it can be used anywhere by just referencing the link of that external style sheet file.\n" +
+                "\n\n" +
+                "So if we do any changes in that external file, then the changes can also be observed on the webpage. So we can say that it is very useful and it makes your work easy while working on larger files"))
+        addQuestion(Question(5,"CSS3"," How to use CSS selector?","By using CSS selector, we can choose the content which we want to style so that we can say that it is a bridge between the style sheet and the HTML files."))
+        addQuestion(Question(6,"CSS3","Explain the concept of Tweening."," Tweening is the process in which we create intermediate frames between two images to get the appearance of the first image which develops into the second image."))
+
+        addQuestion(Question(7,"CSS3"," What are gradients in CSS? ","It is a property of CSS which allows you to display a smooth transformation between two or more than two specified colors.\n" +
+                "\n" +
+                "There are two types of gradients that are present in CSS. They are:\n" +
+                "\n" +
+                "\n1)\tLinear gradient\n" +
+                "\n2)\tRadial Gradient"))
+        addQuestion(Question(8,"CSS3","What is the difference between padding and margin?\n"," In CSS, the margin is the property by which we can create space around elements. We can even create space to the exterior defined borders."))
+        addQuestion(Question(9,"CSS3","Explain the concept of pseudo-elements in CSS.","It is a feature of CSS which is used to style the given parts of an element."))
+        addQuestion(Question(10,"CSS3","What are CSS3 Transitions?","CSS3 transitions allow you to change property values smoothly (from one value to another), over a given duration."))
+        addQuestion(Question(11,"CSS3","What is CSS3 animation ?","When the animation is created in the @keyframe, bind it to a selector, otherwise, the animation will have no effect.\n" +
+                "\n" +
+                "Bind the animation to a selector by specifying at least these two CSS3 animation properties:\n" +
+                "\n\t" +
+                "* \tSpecify the name of the animation\n" +
+                "* \tSpecify the duration of the animation\n"))
+        addQuestion(Question(12,"CSS3","What is CSS3 Flexbox","Flexible boxes, or flexbox, is a new layout mode in CSS3. Flexbox consists of flex containers and flex items.\n\n" +
+                "A flex container is declared by setting the display property of an element to either flex (rendered as a block) or inline-flex (rendered as inline).Inside a flex container, there are one or more flex items."))
+        addQuestion(Question(13,"CSS3","Which property is used to change the face of a font?","The font-family property is used to change the face of a font."))
+        addQuestion(Question(14,"CSS3","Which property is used to make a font italic or oblique?","The font-style property is used to make a font italic or oblique."))
+        addQuestion(Question(15,"CSS3","Which property is used to create a small-caps effect?","The font-variant property is used to create a small-caps effect.\n" +
+                "\n"))
+
+    }
+    private fun BootstrapQuestions(){
+        addQuestion(Question(1,"BootStrap","What is Twitter Bootstrap?","Bootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. It uses HTML, CSS and Javascript.\n" +
+                "\n"))
+
+        addQuestion(Question(2,"BootStrap","What are Offset columns?","Offsets are a useful feature for more specialized layouts. They can be used to push columns over for more spacing, for example. The .col-xs = * classes don't support offsets, but they are easily replicated by using an empty cell."))
+        addQuestion(Question(3,"BootStrap","How can you order columns in Bootstrap?","You can easily change the order of built-in grid columns with .col-md-push-* and .col-md-pull-* modifier classes where * range from 1 to 11.>"))
+        addQuestion(Question(4,"BootStrap","How do you make images responsive?p","Bootstrap 3 allows to make the images responsive by adding a class .img-responsive to the <img> tag. This class applies max-width: 100%; and height: auto; to the image so that it scales nicely to the parent element.\n" +
+                "\n"))
+        addQuestion(Question(5,"BootStrap","What is Normalize in Bootstrap?","Bootstrap uses Normalize to establish cross browser consistency.\n" +
+                "\n" +
+                "Normalize.css is a modern, HTML5-ready alternative to CSS resets. It is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements"))
+        addQuestion(Question(6,"BootStrap","What are glyphicons?","Glyphicons are icon fonts which you can use in your web projects. Glyphicons Halflings are not free and require licensing, however their creator has made them available for Bootstrap projects free of cost."))
+        addQuestion(Question(7,"BootStrap","How do you use Glyphicons?","To use the icons, simply use the following code just about anywhere in your code. Leave a space between the icon and text for proper padding.\n" +
+                "\n\n" +
+                "<span class = \"glyphicon glyphicon-search\"></span>"))
+        addQuestion(Question(8,"BootStrap","What is a transition plugin?","The transition plugin provides simple transition effects such as Sliding or fading in modals."))
+        addQuestion(Question(9,"BootStrap","What is a Modal Plugin?","A modal is a child window that is layered over its parent window. Typically, the purpose is to display content from a separate source that can have some interaction without leaving the parent window. Child windows can provide information, interaction, or more."))
+        addQuestion(Question(10,"BootStrap","What is Bootstrap caraousel?","The Bootstrap carousel is a flexible, responsive way to add a slider to your site. In addition to being responsive, the content is flexible enough to allow images, iframes, videos, or just about any type of content that you might want.>"))
+        addQuestion(Question(11,"BootStrap","What is button group","Button groups allow multiple buttons to be stacked together on a single line. This is useful when you want to place items like alignment buttons together.\n" +
+                "\n"))
+        addQuestion(Question(12,"BootStrap","Which class is used for basic button group",".btn-group class is used for a basic button group. Wrap a series of buttons with class .btn in .btn-group."))
+        addQuestion(Question(13,"BootStrap","Which class is used to draw a toolbar of buttons",".btn-toolbar helps to combine sets of <div class = \"btn-group\"> into a <div class = \"btn-toolbar\"> for more complex components.\n" +
+                "\n"))
+        addQuestion(Question(14,"BootStrap","What are input groups?","You can stack the pills vertically using the class .nav-stacked along with the classes: .nav, .nav-pills."))
+        addQuestion(Question(15,"BootStrap","What are bootstrap labels","Bootstrap labels are great for offering counts, tips, or other markup for pages. Use class .label to display labels.\n" +
+                "\n"))
+
+
+    }
+    private fun JavaScriptQuestions(){
+        addQuestion(Question(1,"JavaScript","What is JavaScript","JavaScript is a scripting language. It is different from Java language. It is object-based, lightweight, cross-platform translated language. It is widely used for client-side validation. The JavaScript Translator (embedded in the browser) is responsible for translating the JavaScript code for the web browser. "))
+        addQuestion(Question(2,"JavaScript","List some features of JavaScript.","*)\tLightweight\n" +
+                "*)\tInterpreted programming language\n" +
+                "*)\tGood for the applications which are network-centric\n" +
+                "*)\tComplementary to Java\n" +
+                "*)\tComplementary to HTML\n" +
+                "*)\tOpen source\n" +
+                "\tCross-platform"))
+        addQuestion(Question(3,"JavaScript","List some of the advantages of JavaScript.","*)\tServer interaction is less\n" +
+                "*)\tFeedback to the visitors is immediate\n" +
+                "*)\tInteractivity is high\n" +
+                "*)\tInterfaces are richer\n"))
+        addQuestion(Question(4,"JavaScript","List some of the disadvantages of JavaScript.t","*)\tNo support for multithreading\n" +
+                "*)\tNo support for multiprocessing\n" +
+                "*)\tReading and writing of files is not allowed\n" +
+                "*)\tNo support for networking applications."))
+        addQuestion(Question(5,"JavaScript","Can an anonymous function be assigned to a variable?t","Yes, you can assign an anonymous function to a variable.\n" +
+                "\n>"))
+        addQuestion(Question(6,"JavaScript","If we want to return the character from a specific index which method is used?","The JavaScript string charAt() method is used to find out a char value present at the specified index. The index number starts from 0 and goes to n-1, where n is the length of the string. The index value can't be a negative, greater than or equal to the length of the string. \n The JavaScript string charAt() method is used to find out a char value present at the specified index. The index number starts from 0 and goes to n-1, where n is the length of the string. The index value can't be a negative, greater than or equal to the length of the string. "))
+        addQuestion(Question(7,"JavaScript"," What is the real name of JavaScript?","The original name was Mocha, a name chosen by Marc Andreessen, founder of Netscape. In September of 1995, the name was changed to LiveScript. In December 1995, after receiving a trademark license from Sun, the name JavaScript was adopted."))
+        addQuestion(Question(8,"JavaScript","What is the difference between undefined value and null value?","* \tUndefined value: A value that is not defined and has no keyword is known as undefined value. For example:\n" +
+                "\n" +
+                "\tint number;//Here, a number has an undefined value.  \n" +
+                "* \tNull value: A value that is explicitly specified by the keyword \"null\" is known as a null value. For example:\n" +
+                "\n" +
+                "String str=null;//Here, str has a null value.  "))
+        addQuestion(Question(9,"JavaScript","What is the difference between View state and Session state?","\"View state\" is specific to a page in a session whereas \"Session state\" is specific to a user or browser that can be accessed across all pages in the web application.\n" +
+                "\n>"))
+        addQuestion(Question(10,"JavaScript"," Is JavaScript faster than ASP script?","Yes, because it doesn't require web server's support for execution.\n" +
+                "\n"))
+        addQuestion(Question(11,"JavaScript"," How to change the background color of HTML document using JavaScript?","document.body.bgColor=\"pink\";  \n"))
+        addQuestion(Question(12,"JavaScript","What is the use of a Map object in JavaScript?","The JavaScript Map object is used to map keys to values. It stores each element as key-value pair. It operates the elements such as search, update and delete on the basis of specified key. For example:\n" +
+                "\n\nfunction display()  \n" +
+                "{  \n" +
+                "var map=new Map();    \n" +
+                "map.set(1,\"jQuery\");    \n" +
+                "map.set(2,\"AngularJS\");    \n" +
+                "map.set(3,\"Bootstrap\");    \n" +
+                "document.writeln(map.get(1)+\"<br>\");    \n" +
+                "document.writeln(map.get(2)+\"<br>\");    \n" +
+                "document.writeln(map.get(3));    \n" +
+                "}  \n" +
+                "display();  "))
+        addQuestion(Question(13,"JavaScript","What is negative infinity?t","Negative Infinity is a number in JavaScript which can be derived by dividing negative number by zero.\n" +
+                "\n"))
+        addQuestion(Question(14,"JavaScript","What are undeclared and undefined variables?","Undeclared variables are those that do not exist in a program and are not declared. If the program tries to read the value of an undeclared variable, then a runtime error is encountered.\n" +
+                "\n" +
+                "Undefined variables are those that are declared in the program but have not been given any value. If the program tries to read the value of an undefined variable, an undefined value is returned.\n" +
+                "\n"))
+        addQuestion(Question(15,"JavaScript","What is a prompt box?","A prompt box is a box which allows the user to enter input by providing a text box. Label and box will be provided to enter the text or number."))
+        addQuestion(Question(16,"JavaScript","What is 'this' keyword in JavaScript?","'This' keyword refers to the object from where it was called.\n" +
+                "\n"))
+
+    }
+
+
+
 
 
     fun addQuestion(question: Question) {
@@ -386,7 +700,7 @@ class AppDBOpenHelper (context: Context,
     }
 
     companion object {
-        private val DATABASE_VERSION = 1
+        private val DATABASE_VERSION = 2
         private val DATABASE_NAME = "neuInterview.db"
         val TABLE_NAME = "neuInterview"
         val COLUMN_ID = "_id"

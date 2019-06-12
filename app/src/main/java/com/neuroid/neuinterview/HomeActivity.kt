@@ -14,6 +14,18 @@ import com.google.android.gms.ads.MobileAds
 import com.neuroid.neuinterview.fragment.HomeFragment
 import com.neuroid.neuinterview.fragment.QuestionsFragment
 import kotlinx.android.synthetic.main.activity_home.*
+import com.neuroid.neuinterview.R.id.action_Angular as action_Angular1
+import com.neuroid.neuinterview.R.id.action_Bootstrap as action_Bootstrap1
+import com.neuroid.neuinterview.R.id.action_CSS as action_CSS1
+import com.neuroid.neuinterview.R.id.action_ES6 as action_ES61
+import com.neuroid.neuinterview.R.id.action_HTML as action_HTML1
+import com.neuroid.neuinterview.R.id.action_Home as action_Home1
+import com.neuroid.neuinterview.R.id.action_JavaScript as action_JavaScript1
+import com.neuroid.neuinterview.R.id.action_MongoDB as action_MongoDB1
+import com.neuroid.neuinterview.R.id.action_NodeJS as action_NodeJS1
+import com.neuroid.neuinterview.R.id.action_ReactJS as action_ReactJS1
+import com.neuroid.neuinterview.R.id.action_TypScript as action_TypScript1
+import com.neuroid.neuinterview.R.id.action_jQuery as action_jQuery1
 
 class HomeActivity : AppCompatActivity() {
 
@@ -24,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         // Configure action bar
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Hello Toolbar"
+        actionBar?.title = "NeuInterview"
         supportFragmentManager.beginTransaction().replace(R.id.relativelayout, HomeFragment()).commit()
         MobileAds.initialize(this,
             getString(R.string.appID))
@@ -61,59 +73,62 @@ class HomeActivity : AppCompatActivity() {
         // Set navigation view navigation item selected listener
         navigation_view.setNavigationItemSelectedListener{
             when (it.itemId){
-                R.id.action_Home ->{
+                action_Home1 ->{
                     replaceFragments(HomeFragment())
                 }
-                R.id.action_HTML ->{
+                action_HTML1 ->{
                     val fragment = QuestionsFragment.newInstance("HTML5")
+                    actionBar!!.title = "HTML5"
                     replaceFragments(fragment)
                 }
-                R.id.action_CSS -> {
+                action_CSS1 -> {
                     val fragment = QuestionsFragment.newInstance("CSS3")
+                    actionBar!!.title = "CSS3"
                     replaceFragments(fragment)
                 }
-                R.id.action_Bootstrap ->{
+                action_Bootstrap1 ->{
                     val fragment = QuestionsFragment.newInstance("BootStrap")
+                    actionBar!!.title = "BootStrap"
                     replaceFragments(fragment)
                 }
-                R.id.action_JavaScript ->{
+                action_JavaScript1 ->{
                     val fragment = QuestionsFragment.newInstance("JavaScript")
+                    actionBar!!.title = "JavaScript"
                     replaceFragments(fragment)
                 }
-                R.id.action_jQuery ->{
+                action_jQuery1 ->{
                     val fragment = QuestionsFragment.newInstance("jQuery")
+                    actionBar!!.title = "jQuery"
                     replaceFragments(fragment)
                 }
-                R.id.action_Angular ->{
+                action_Angular1 ->{
                     val fragment = QuestionsFragment.newInstance("Angular")
+                    actionBar!!.title = "Angular"
                     replaceFragments(fragment)
                 }
-                R.id.action_TypScript ->{
+                action_TypScript1 ->{
                     val fragment = QuestionsFragment.newInstance("TypScript")
+                    actionBar!!.title = "TypScript"
                     replaceFragments(fragment)
                 }
-                R.id.action_NodeJS -> {
+                action_NodeJS1 -> {
                     val fragment = QuestionsFragment.newInstance("NodeJS")
+                    actionBar!!.title = "NodeJS"
                     replaceFragments(fragment)
                 }
-                R.id.action_ES6 -> {
+                action_ES61 -> {
                     val fragment = QuestionsFragment.newInstance("ES6")
+                    actionBar!!.title = "ES6"
                     replaceFragments(fragment)
                 }
-                R.id.action_ReactJS ->{
+                action_ReactJS1 ->{
                     val fragment = QuestionsFragment.newInstance("ReactJS")
+                    actionBar!!.title = "ReactJS"
                     replaceFragments(fragment)
                 }
-                R.id.action_MongoDB -> {
+                action_MongoDB1 -> {
                     val fragment = QuestionsFragment.newInstance("MongoDB")
-                    replaceFragments(fragment)
-                }
-                R.id.action_AEM ->{
-                    val fragment = QuestionsFragment.newInstance("AEM")
-                    replaceFragments(fragment)
-                }
-                R.id.action_Misc ->{
-                    val fragment = QuestionsFragment.newInstance("Misc")
+                    actionBar!!.title = "MongoDB"
                     replaceFragments(fragment)
                 }
             }
