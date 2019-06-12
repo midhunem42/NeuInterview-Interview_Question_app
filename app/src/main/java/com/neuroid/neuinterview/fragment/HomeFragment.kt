@@ -12,6 +12,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.neuroid.neuinterview.R
+import kotlinx.android.synthetic.main.activity_home.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,8 +38,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val actionBar = (activity )!!.actionBar
-        actionBar?.title = "Home "
+        activity!!.setTitle("Home")
 
         MobileAds.initialize(activity,getString(R.string.appID))
         mInterstitialAd = InterstitialAd(activity)

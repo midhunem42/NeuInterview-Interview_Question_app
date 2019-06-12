@@ -184,7 +184,7 @@ class AppDBOpenHelper (context: Context,
         addQuestion(Question(8,"TypScript"," What are all the JSX modes TypeScript supports?","TypeScript ships with three JSX modes: preserve, react, and react-native.\n" +
                 "\n" +
                 "The preserve mode will keep the JSX as part of the output to be further consumed by another transform step (e.g. Babel). Additionally the output will have a .jsx file extension. The react mode will emit React.createElement, does not need to go through a JSX transformation before use, and the output will have a .js file extension. The react-native mode is the equivalent of preserve in that it keeps all JSX, but the output will instead have a .js file extension."))
-        addQuestion(Question(9,"TypScript","Why TypeScript is referred as Optionally Statically Typed Language?\n" +
+        addQuestion(Question(9,"TypScript","Why TypeScript is referred as Optionally Statically Typed Language?" +
                 "\n","TypeScript is referred as optionally statically typed, which means we can make the compiler to ignore the type of a variable optionally. Using any data type, we can assign any type of value to the variable. TypeScript will not give any error checking during compilation."))
         addQuestion(Question(10,"TypScript"," What is TypeScript? Why should we use it?","TypeScript is a typed superset of JavaScript that compiles to plain JavaScript which runs on any browser or JavaScript engine.\n" +
                 "\n"))

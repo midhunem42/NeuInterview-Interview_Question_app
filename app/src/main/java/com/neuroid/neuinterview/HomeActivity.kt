@@ -30,6 +30,7 @@ import com.neuroid.neuinterview.R.id.action_jQuery as action_jQuery1
 class HomeActivity : AppCompatActivity() {
 
     lateinit var mAdView : AdView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -78,71 +79,61 @@ class HomeActivity : AppCompatActivity() {
                 }
                 action_HTML1 ->{
                     val fragment = QuestionsFragment.newInstance("HTML5")
-                    actionBar!!.title = "HTML5"
                     replaceFragments(fragment)
                 }
                 action_CSS1 -> {
                     val fragment = QuestionsFragment.newInstance("CSS3")
-                    actionBar!!.title = "CSS3"
                     replaceFragments(fragment)
                 }
                 action_Bootstrap1 ->{
                     val fragment = QuestionsFragment.newInstance("BootStrap")
-                    actionBar!!.title = "BootStrap"
                     replaceFragments(fragment)
                 }
                 action_JavaScript1 ->{
                     val fragment = QuestionsFragment.newInstance("JavaScript")
-                    actionBar!!.title = "JavaScript"
                     replaceFragments(fragment)
                 }
                 action_jQuery1 ->{
                     val fragment = QuestionsFragment.newInstance("jQuery")
-                    actionBar!!.title = "jQuery"
                     replaceFragments(fragment)
                 }
                 action_Angular1 ->{
                     val fragment = QuestionsFragment.newInstance("Angular")
-                    actionBar!!.title = "Angular"
                     replaceFragments(fragment)
                 }
                 action_TypScript1 ->{
                     val fragment = QuestionsFragment.newInstance("TypScript")
-                    actionBar!!.title = "TypScript"
                     replaceFragments(fragment)
                 }
                 action_NodeJS1 -> {
                     val fragment = QuestionsFragment.newInstance("NodeJS")
-                    actionBar!!.title = "NodeJS"
                     replaceFragments(fragment)
                 }
                 action_ES61 -> {
                     val fragment = QuestionsFragment.newInstance("ES6")
-                    actionBar!!.title = "ES6"
                     replaceFragments(fragment)
                 }
                 action_ReactJS1 ->{
                     val fragment = QuestionsFragment.newInstance("ReactJS")
-                    actionBar!!.title = "ReactJS"
                     replaceFragments(fragment)
                 }
                 action_MongoDB1 -> {
                     val fragment = QuestionsFragment.newInstance("MongoDB")
-                    actionBar!!.title = "MongoDB"
                     replaceFragments(fragment)
                 }
             }
+            actionBar!!.title=it.title
             // Close the drawer
             drawer_layout.closeDrawer(GravityCompat.START)
             true
         }
     }
 
-
-    // Extension function to show toast message easily
-    private fun Context.toast(message:String){
-        Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT).show()
+    private fun setActionBarTitle(title :String) {
+        val actionBar = supportActionBar
+        actionBar?.title = title
     }
+
 
     private fun replaceFragments(fragment:Fragment){
         supportFragmentManager.beginTransaction().replace(R.id.relativelayout, fragment).commit()

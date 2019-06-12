@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import com.neuroid.neuinterview.HomeActivity
 import com.neuroid.neuinterview.R
 import com.neuroid.neuinterview.Utility.AppDBOpenHelper
 import com.neuroid.neuinterview.model.Question
@@ -37,6 +38,7 @@ class ViewQuestionFragment : Fragment() {
         val view =inflater.inflate(R.layout.fragment_view_questions, container, false)
 
         val name = arguments?.getString("category")
+        (activity as HomeActivity).supportActionBar!!.title= name
         val qId = arguments!!.getInt("qId")
 
         val dbHandler= AppDBOpenHelper(activity!!,null)

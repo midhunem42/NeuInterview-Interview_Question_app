@@ -10,11 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.neuroid.neuinterview.HomeActivity
 import com.neuroid.neuinterview.R
 import com.neuroid.neuinterview.Utility.AppDBOpenHelper
 import com.neuroid.neuinterview.Utility.OnItemClickListener
 import com.neuroid.neuinterview.Utility.adapter.QuestionAdapter
 import com.neuroid.neuinterview.model.Question
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,7 +45,10 @@ class QuestionsFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_questions, container, false)
         // Inflate the layout for this fragment
+
+
         val name = arguments!!.getString("category")
+        (activity as HomeActivity).supportActionBar!!.title= name
 
         val dbHandler= AppDBOpenHelper(activity!!,null);
              questions = dbHandler.getQuestionsByCategory(name)!!
@@ -61,6 +67,8 @@ class QuestionsFragment : Fragment() {
         recyclerview.adapter = QuestionAdapter(questions,activity!!,listener)
         return view
     }
+
+
 
     companion object {
         fun newInstance(name: String): QuestionsFragment {
